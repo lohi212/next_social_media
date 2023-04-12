@@ -1,5 +1,6 @@
-import { Carousel } from "antd";
+import { Carousel } from "react-responsive-carousel";
 import Photo from "../components/CldPhoto";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 
 const CldGallery = (props) => {
   return (

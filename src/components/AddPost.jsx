@@ -24,9 +24,10 @@ const AddPost = ({ handleAddPost }) => {
         open={open}
         onOk={handleClose}
         onCancel={handleClose}
+        width="80%"
       >
-        Username
-        <Input.TextArea placeholder="Enter caption" />
+        <p>Username</p>
+        <Input.TextArea placeholder="Enter caption" className="mb-10" />
         <UploadWidget
           setImagesUploadedList={setImagesUploadedList}
           imagesUploadedList={imagesUploadedList}
