@@ -1,5 +1,6 @@
-import { Button, Modal } from "antd";
+import { Button, Modal, Input } from "antd";
 import React, { useState } from "react";
+import UploadWidget from "./UploadWidget";
 
 const AddPost = ({ handleAddPost }) => {
   const [open, setOpen] = useState(false);
@@ -23,6 +24,8 @@ const AddPost = ({ handleAddPost }) => {
         onCancel={handleClose}
       >
         Username
+        <Input.TextArea placeholder="Enter caption" />
+        <UploadWidget />
         {/* Add description */}
         {/* Upload Image widget */}
       </Modal>
