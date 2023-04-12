@@ -13,7 +13,22 @@ const CldPhoto = (props) => {
   const myImage = cld.image(props.publicId);
   myImage.resize(fill().width(250).height(250)).delivery(quality(60));
 
-  return <AdvancedImage cldImg={myImage} plugins={[lazyload()]} />;
+  return (
+    <div
+      style={{
+        background: "#364d79",
+        display: "flex",
+        justifyContent: "center",
+      }}
+    >
+      <AdvancedImage
+        cldImg={myImage}
+        plugins={[lazyload()]}
+        width={250}
+        height={250}
+      />
+    </div>
+  );
 };
 
 export default CldPhoto;

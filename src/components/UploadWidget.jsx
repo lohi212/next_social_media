@@ -4,9 +4,7 @@ import CldGallery from "./CldGallery";
 
 import ImageUpload from "./ImageUpload";
 
-const UploadWidget = () => {
-  const [imagesUploadedList, setImagesUploadedList] = useState([]);
-
+const UploadWidget = ({ imagesUploadedList, setImagesUploadedList }) => {
   const cld = new Cloudinary({
     cloud: {
       cloud_name: "dcyauywtv", //Your cloud name

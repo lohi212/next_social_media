@@ -4,6 +4,7 @@ import UploadWidget from "./UploadWidget";
 
 const AddPost = ({ handleAddPost }) => {
   const [open, setOpen] = useState(false);
+  const [imagesUploadedList, setImagesUploadedList] = useState([]);
 
   const handleAdd = () => {
     setOpen(true);
@@ -11,6 +12,7 @@ const AddPost = ({ handleAddPost }) => {
 
   const handleClose = () => {
     setOpen(false);
+    setImagesUploadedList([]);
   };
 
   return (
@@ -25,7 +27,10 @@ const AddPost = ({ handleAddPost }) => {
       >
         Username
         <Input.TextArea placeholder="Enter caption" />
-        <UploadWidget />
+        <UploadWidget
+          setImagesUploadedList={setImagesUploadedList}
+          imagesUploadedList={imagesUploadedList}
+        />
         {/* Add description */}
         {/* Upload Image widget */}
       </Modal>
