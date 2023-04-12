@@ -19,14 +19,17 @@ const CldPhoto = (props) => {
         background: "#364d79",
         display: "flex",
         justifyContent: "center",
+        width: "100%",
       }}
     >
-      <AdvancedImage
-        cldImg={myImage}
-        plugins={[lazyload()]}
-        width={250}
-        height={250}
-      />
+      <div style={{ width: "50%" }}>
+        <AdvancedImage
+          cldImg={myImage}
+          plugins={[lazyload()]}
+          // width={250}
+          // height={250}
+        />
+      </div>
     </div>
   );
 };

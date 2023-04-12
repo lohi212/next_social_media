@@ -1,9 +1,12 @@
 import { openUploadWidget } from "@/utils";
 import { Button } from "antd";
+import { useState } from "react";
 
 const ImageUpload = (props) => {
+  const [isLoading, setIsLoading] = useState(false);
+
   const uploadImageWidget = () => {
-    console.log(props);
+    setIsLoading(true);
     let myUploadWidget = openUploadWidget(
       {
         cloudName: props.cloud_name,
@@ -18,10 +21,15 @@ const ImageUpload = (props) => {
         }
       }
     );
+    setIsLoading(false);
     myUploadWidget.open();
   };
 
-  return <Button onClick={uploadImageWidget}>Upload Image</Button>;
+  return (
+    <Button onClick={uploadImageWidget} loading={isLoading} className="mb-10">
+      Upload Image
+    </Button>
+  );
 };
 
 export default ImageUpload;

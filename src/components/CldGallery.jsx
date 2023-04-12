@@ -8,19 +8,21 @@ const CldGallery = (props) => {
       {!props.imagesUploaded && props.imagesUploaded.length === 0 && (
         <p>No photos were added yet.</p>
       )}
-      <Carousel>
-        {props.imagesUploaded &&
-          props.imagesUploaded.length !== 0 &&
-          props.imagesUploaded.map((publicId) => {
-            return (
-              <Photo
-                key={publicId}
-                publicId={publicId}
-                cloudName={props.cloud_name}
-              />
-            );
-          })}
-      </Carousel>
+      <div style={{ width: "50%" }}>
+        <Carousel infiniteLoop>
+          {props.imagesUploaded &&
+            props.imagesUploaded.length !== 0 &&
+            props.imagesUploaded.map((publicId) => {
+              return (
+                <Photo
+                  key={publicId}
+                  publicId={publicId}
+                  cloudName={props.cloud_name}
+                />
+              );
+            })}
+        </Carousel>
+      </div>
     </div>
   );
 };
