@@ -7,7 +7,7 @@ const AllPosts = ({ posts }) => {
     <Card>
       {(posts || []).map((post) => (
         <div key={post.id}>
-          <div>{JSON.stringify(post)}</div>
+          <p>{JSON.stringify(post)}</p>
           {/* <div>{post.title}</div> */}
         </div>
       ))}

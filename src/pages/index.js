@@ -1,30 +1,23 @@
-import AddPost from "@/components/AddPost";
-import AllPosts from "@/components/AllPosts";
-import { Divider } from "antd";
-import { useState } from "react";
+import Home from "@/components/Home";
+import Container from "@/components/Layout";
+import React, { createContext, useEffect, useState } from "react";
+import app from "./api/auth";
 
-function Home() {
-  const isServer = typeof window === "undefined";
+export const AuthContext = createContext();
 
-  const [allPosts, setAllPosts] = useState(
-    JSON.parse(!isServer ? localStorage.getItem("posts") || "[]" : "[]")
-  );
+const App = () => {
+  const [currUser, setCurrUser] = useState(null);
 
-  const handleAddPost = (post) => {
-    const allPosts = JSON.parse(localStorage.getItem("posts") || "[]");
-    const newAllPosts = [...allPosts, { ...post }];
-    setAllPosts(newAllPosts);
-    localStorage.setItem("posts", JSON.stringify(newAllPosts));
-  };
+  useEffect(() => {
+    console.log({ app });
+    app.auth().onAuthStateChanged(setCurrUser);
+  }, []);
 
   return (
-    <main className="p-5 root-container">
-      <h1 className="text-center">Social Media App</h1>
-      <AddPost handleAddPost={handleAddPost} />
-      <Divider />
-      <AllPosts posts={allPosts} />
-    </main>
+    <AuthContext.Provider value={{ currUser }}>
+      <Home />
+    </AuthContext.Provider>
   );
-}
+};
 
-export default Home;
+export default App;
