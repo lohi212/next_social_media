@@ -6,6 +6,7 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  background-color: #f8f5f5;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -15,4 +16,12 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
+
+.root-container {
+  margin: 20px 10%;
+  padding: 20px;
+  height: 90vh;
+  background-color: #fff;
+}
+
 
