@@ -26,6 +26,10 @@ const AddPost = ({ handleAddPost }) => {
       // likes,
       // comments
       id: Date.now(),
+      profile: {
+        username: "",
+        image: "",
+      },
     });
     handleClose();
   };
@@ -43,8 +47,8 @@ const AddPost = ({ handleAddPost }) => {
           alt="profile_photo"
           className="rounded-[50%]"
           src="https://imgur.com/ffMnKlq.png"
-          width={60}
-          height={60}
+          width={50}
+          height={50}
         />
         <Input
           ref={inputRef}

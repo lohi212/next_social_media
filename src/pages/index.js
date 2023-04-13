@@ -1,5 +1,6 @@
 import AddPost from "@/components/AddPost";
 import AllPosts from "@/components/AllPosts";
+import { Divider } from "antd";
 import { useState } from "react";
 
 function Home() {
@@ -20,6 +21,7 @@ function Home() {
     <main className="p-5 root-container">
       <h1 className="text-center">Social Media App</h1>
       <AddPost handleAddPost={handleAddPost} />
+      <Divider />
       <AllPosts posts={allPosts} />
     </main>
   );
