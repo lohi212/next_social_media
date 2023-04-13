@@ -24,4 +24,20 @@
   background-color: #fff;
 }
 
+.ant-input-search {
+  width: 80%;
+  border-radius: 25px;
+  height: 40px;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.jc-space-bw {
+  justify-content: space-between;
+}
+
 
