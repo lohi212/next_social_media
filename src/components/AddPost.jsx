@@ -48,13 +48,9 @@ const AddPost = ({ handleAddPost }) => {
         />
         <Input
           ref={inputRef}
-          value={value}
           className="ant-input-search "
           placeholder="Start a post"
           onFocus={handleAdd}
-          onChange={(e) => {
-            setValue(e.target.value);
-          }}
         />
       </Card>
 
@@ -75,7 +71,14 @@ const AddPost = ({ handleAddPost }) => {
         }}
       >
         <p>Username</p>
-        <Input.TextArea placeholder="Enter caption" className="mb-10" />
+        <Input.TextArea
+          value={value}
+          className="mb-10"
+          placeholder="Enter caption"
+          onChange={(e) => {
+            setValue(e.target.value);
+          }}
+        />
         <UploadWidget
           setImagesUploadedList={setImagesUploadedList}
           imagesUploadedList={imagesUploadedList}
