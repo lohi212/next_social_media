@@ -1,9 +1,11 @@
-import app from "@/pages/api/auth";
+// import app from "@/pages/api/auth";
 import { Button, Input } from "antd";
 import { useRouter } from "next/router";
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useState, useContext } from "react";
+import { AuthContext } from "./ContextWrapper";
 
 const Login = () => {
+  const { app } = useContext(AuthContext);
   const router = useRouter();
   const [values, setValues] = useState({ email: "", password: "" });
 

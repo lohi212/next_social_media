@@ -1,23 +1,16 @@
-import Home from "@/components/Home";
-import Container from "@/components/Layout";
-import React, { createContext, useEffect, useState } from "react";
-import app from "./api/auth";
-
-export const AuthContext = createContext();
+import React, { useEffect, useState } from "react";
+import ContextWrapper from "@/components/ContextWrapper";
+import { app } from "@/utils";
 
 const App = () => {
-  const [currUser, setCurrUser] = useState(null);
+  const [firebaseApp, setFirebaseApp] = useState("");
 
   useEffect(() => {
-    console.log({ app });
-    app.auth().onAuthStateChanged(setCurrUser);
+    if (!firebaseApp) setFirebaseApp(app);
   }, []);
 
-  return (
-    <AuthContext.Provider value={{ currUser }}>
-      <Home />
-    </AuthContext.Provider>
-  );
+  console.log({ firebaseApp });
+  return <ContextWrapper app={firebaseApp} />;
 };
 
 export default App;

@@ -1,10 +1,13 @@
-import app from "@/pages/api/auth";
+// import app from "@/pages/api/auth";
+
 import { Button, Layout } from "antd";
-import React from "react";
+import React, { useContext } from "react";
+import { AuthContext } from "./ContextWrapper";
 
 const { Header, Content } = Layout;
 
 const Container = ({ children }) => {
+  const { app } = useContext(AuthContext);
   const handleLogout = () => {
     app.auth().signOut();
   };

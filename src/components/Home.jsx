@@ -22,13 +22,12 @@ function Home() {
 
   return (
     <Container>
-      posts
-      {/* <main className="p-5 root-container">
+      <main className="p-5 root-container">
         <h1 className="text-center">Social Media App</h1>
         <AddPost handleAddPost={handleAddPost} />
         <Divider />
         <AllPosts posts={allPosts} />
-      </main> */}
+      </main>
     </Container>
   );
 }
