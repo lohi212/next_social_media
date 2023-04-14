@@ -7,13 +7,12 @@ const ContextWrapper = ({ app }) => {
   const [currUser, setCurrUser] = useState(null);
 
   useEffect(() => {
-    console.log({ app });
     if (app) app.auth().onAuthStateChanged(setCurrUser);
   }, []);
 
   return (
     <AuthContext.Provider value={{ currUser, app }}>
-      <Home />
+      <Home app={app} />
     </AuthContext.Provider>
   );
 };

@@ -2,7 +2,6 @@ import { Card } from "antd";
 import React from "react";
 
 const AllPosts = ({ posts }) => {
-  console.log({ posts });
   return (
     <Card>
       {(posts || []).map((post) => (

@@ -9,7 +9,6 @@ const App = () => {
     if (!firebaseApp) setFirebaseApp(app);
   }, []);
 
-  console.log({ firebaseApp });
   return <ContextWrapper app={firebaseApp} />;
 };
 
